@@ -6,7 +6,7 @@ function Header() {
   return (
     <>
         <nav>
-            <p>Logo</p>
+            <p>Noble Saloon</p>
             <ul>
                 <li><Link to = '/'>Home</Link></li>
                 <li><Link to =''>Services</Link></li>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 import './reviews.css'
 
 function Reviews() {
@@ -20,11 +21,15 @@ function Reviews() {
 
     const AddReview = (e) =>{
       e.preventDefault();
+      if(name===undefined|| comment===undefined || rating===undefined){
+        setError(true)
+      }else{
       const newReview = { name, comment,rating };
       setArray([...array, newReview]);
       setAddReview(true)
       setNoReview(false)
       setInput(false)
+    }
     }
   
 
@@ -45,22 +50,23 @@ function Reviews() {
         {addReview && <button className='addButton' onClick={Input} >Add a Review</button>}
         {input && <form>
         <label>Name:</label> <br />
-        <input type="text" onChange={(e)=>{setName(e.target.value)}} placeholder='name' /> <br />
+        <input type="text" value={name} onChange={(e)=>{setName(e.target.value)}} placeholder='name' /> <br />
         <label>Comment:</label> <br />
-        <input type="text" onChange={(e)=>{setComment(e.target.value)}} placeholder='comment' /> <br />
+        <input type="text" value={comment} onChange={(e)=>{setComment(e.target.value)}} placeholder='comment' /> <br />
         <label>Rating:</label>
-        <select onChange={(e)=>{setRating(e.target.value)}}>
-            <option name="1">1</option>
-            <option name="2">2</option>
-            <option name="3">3</option>
-            <option name="4">4</option>
-            <option name="5" selected='selected'>5</option>
+        <select value={rating} onChange={(e)=>{setRating(e.target.value)}}>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option selected value="5">5</option>
         </select> <br />
         {error && <p className='error'>All inputs fields are required!!!</p>}
         <button onClick={AddReview} className='addReview'>Add Review</button>
         </form>}
         
     </div>
+    <Footer />
     </>
   )
 }
