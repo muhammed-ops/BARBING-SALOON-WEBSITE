@@ -8,7 +8,6 @@ function Reviews() {
     const [comment,setComment] = useState();
     const [rating,setRating] = useState('5');
     const [noreview,setNoReview] = useState(true);
-    const [addButton, setAddButton] = useState(true);
     const [addReview , setAddReview] = useState(true);
     const [input,setInput] = useState(false)
     const [array,setArray] = useState([])
