@@ -20,15 +20,12 @@ function Reviews() {
 
     const AddReview = (e) =>{
       e.preventDefault();
-      const updatedArray = [...array,[name,comment,rating]];
-      if(name === undefined || comment === undefined || rating === undefined){
-        setError(true)
-      }else{
-      setArray(updatedArray)
+      const newReview = { name, comment,rating };
+      setArray([...array, newReview]);
       setAddReview(true)
       setNoReview(false)
       setInput(false)
-    }}
+    }
   
 
   return (
@@ -38,9 +35,9 @@ function Reviews() {
         {array && array.map((data,index)=>(
           <div className='box2' key={index}>
             <ul>
-              <li>Name:{data[0]}</li>
-              <li>Comment:{data[1]}</li>
-              <li>Rating:{data[2]}</li>
+              <li>Name:{data.name}</li>
+              <li>Comment:{data.comment}</li>
+              <li>Rating:{data.rating}</li>
             </ul>
           </div>
         ))}
