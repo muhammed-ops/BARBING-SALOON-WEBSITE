@@ -8,7 +8,7 @@ function Image() {
     <div className='container'>
         <img src={image} alt="barb" />
         <p>GET A FRESH CUT...</p>
-        <button><Link to= ''>Book A Haircut</Link></button>
+        <button><Link to= '/booking'>Book A Haircut</Link></button>
     </div>
   )
 }

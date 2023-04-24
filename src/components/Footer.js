@@ -7,7 +7,7 @@ function Footer() {
   return (
     <div className='footer'>
         <div className="contact">
-            <p>Contact</p>
+            <p>Contact  Us</p>
             <ul>
                 <li><FaFacebook className='icon' /><span>Facebook</span></li>
                 <li><FaInstagram className='icon' /><span>Instagram</span></li>
