@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './booking.css'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { useNavigate } from 'react-router-dom';
+
 
 function Booking() {
   const [name,setName] = useState('')
@@ -10,6 +12,8 @@ function Booking() {
   const [option,setOption] = useState('fade')
   const [date,setDate] = useState('')
   const [err,setError] = useState(false)
+  const navigate = useNavigate();
+
 
   const sendForm = (e) =>{
     e.preventDefault();
@@ -18,7 +22,7 @@ function Booking() {
       setError(true);
     }else{
       console.log('good')
-      window.location.href = "/confirmbooking";
+      navigate('/confirmbooking');
     }
   }
   return (
